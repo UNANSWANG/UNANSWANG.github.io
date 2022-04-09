@@ -51,7 +51,7 @@
   display: block;
 }
 .nexmoe-archives .categories a span:after {
-  content: " Articles";
+  content: " archives";
 }
 .nexmoe-archives article > *:first-child {
   margin-top: 0;
