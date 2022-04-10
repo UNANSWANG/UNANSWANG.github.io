@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>ANSWANG</title>
+  <title>cSharp使用细节 - ANSWANG</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -16,19 +16,24 @@
     <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
 
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/tangyuxian/blog_image@master/head/head.jpg" type="image/png" />
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ANSWANG">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="接口的使用细节假如我要创建一个二重的接口需要以以下方法创建  1IList&lt;List&lt;int&gt;&gt; arrs &#x3D; new List&lt;List&lt;int&gt;&gt;(); 前半部分为接口，后半部分为实例化部分，现在前半部分的接口为IList&lt;List&gt;，相当于二维数组的第一层那部分为接口，里面的为实例化int型，后面要为这个接口赋值的话，也必须是IL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cSharp使用细节">
+<meta property="og:url" content="http://example.com/2022/04/10/cSharp%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82/index.html">
 <meta property="og:site_name" content="ANSWANG">
+<meta property="og:description" content="接口的使用细节假如我要创建一个二重的接口需要以以下方法创建  1IList&lt;List&lt;int&gt;&gt; arrs &#x3D; new List&lt;List&lt;int&gt;&gt;(); 前半部分为接口，后半部分为实例化部分，现在前半部分的接口为IList&lt;List&gt;，相当于二维数组的第一层那部分为接口，里面的为实例化int型，后面要为这个接口赋值的话，也必须是IL">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-10T15:22:34.000Z">
+<meta property="article:modified_time" content="2022-04-10T16:33:34.244Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="cSharp">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_cksn56jaae6.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1649608791255">
+  <link rel="stylesheet" href="/css/style.css?v=1649608791245">
 <meta name="generator" content="Hexo 6.1.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -215,27 +220,38 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <section class="nexmoe-posts">
+        <div class="nexmoe-post">
     
-    <div class="nexmoe-post">
-        <a href="/2022/04/10/cSharp%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82/">
+        <div class="nexmoe-post-cover"
+             style="padding-bottom: 24.305555555555554%;">
+            <img data-src="https://cdn.jsdelivr.net/gh/tangyuxian/blog_image@master/background/xiaomai.jpg" data-sizes="auto" alt="cSharp使用细节" class="lazyload">
+            <h1>cSharp使用细节</h1>
+        </div>
+    
+
+        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年04月10日</a>
+    <a><i class="nexmoefont icon-areachart"></i>499 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+</div>
+
+        <div class="nexmoe-post-right">
             
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="https://cdn.jsdelivr.net/gh/tangyuxian/blog_image@master/background/xiaomai.jpg" data-sizes="auto" alt="cSharp使用细节" class="lazyload">
-                    <h1>cSharp使用细节</h1>
+                <div class="nexmoe-fixed">
+                    <div class="nexmoe-valign">
+                        <div class="nexmoe-toc">
+                            
+                            
+                                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82"><span class="toc-number">1.</span> <span class="toc-text">接口的使用细节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4List%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二维List的输入与输出例子</span></a></li></ol>
+                            
+                        </div>
+                    </div>
                 </div>
             
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2022年04月10日</a>
-            <a><i class="nexmoefont icon-areachart"></i>499 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
         </div>
 
         <article>
-            
-                <blockquote>
+            <blockquote>
 <h2 id="接口的使用细节"><a href="#接口的使用细节" class="headerlink" title="接口的使用细节"></a>接口的使用细节</h2><p>假如我要创建一个二重的接口需要以以下方法创建</p>
 </blockquote>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IList&lt;List&lt;<span class="built_in">int</span>&gt;&gt; arrs = <span class="keyword">new</span> List&lt;List&lt;<span class="built_in">int</span>&gt;&gt;();</span><br></pre></td></tr></table></figure>
@@ -252,227 +268,47 @@
 
 <p>题目点这里](<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combination-sum/">https://leetcode-cn.com/problems/combination-sum/</a>)</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-            
         </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2022/04/09/Ray%E8%AF%A6%E8%A7%A3%E9%BC%A0%E6%A0%87%E9%80%89%E5%8F%96%E7%89%A9%E5%93%81%E4%BB%A5%E5%8F%8A%E7%9B%AE%E6%A0%87%E5%8C%B9%E9%85%8D/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="https://cdn.jsdelivr.net/gh/tangyuxian/blog_image@master/background/xiaomai.jpg" data-sizes="auto" alt="Ray详解鼠标选取物品以及目标匹配" class="lazyload">
-                    <h1>Ray详解鼠标选取物品以及目标匹配</h1>
-                </div>
-            
-        </a>
+
         
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2022年04月09日</a>
-            <a><i class="nexmoefont icon-areachart"></i>601 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
-
-        <article>
             
-                <blockquote>
-<h2 id="Ray"><a href="#Ray" class="headerlink" title="Ray"></a>Ray</h2></blockquote>
-<ul>
-<li>Ray (origin : Vector3, direction : Vector3)<br>Origin 是射线的中心<br>Direction 是射线的长度</li>
-<li>Ray ray &#x3D; Camera.main.ScreenPointToRay(Input.mousePosition)<br>这句话的意思为创一个射线在鼠标所在位置从摄像机发送至屏幕</li>
-<li>除了Ray还有Physics.Raycast<br>用以检测光线是否触碰到物体<br>其中API文档中有的四个</li>
-</ul>
-<ol>
-<li><p>public static bool Raycast(Ray ray, RaycastHit hitInfo, float distance, int layerMask);</p>
-</li>
-<li><p>public static bool Raycast(Ray ray, float distance, int layerMask);</p>
-</li>
-<li><p>public static bool Raycast(Vector3 origin, Vector3 direction, float distance, int layerMask);</p>
-</li>
-<li><p>public static bool Raycast(Vector3 origin, Vector3 direction, RaycastHit , float distance ，int layerMask);</p>
-</li>
-</ol>
-<p><em><strong>个人认为参数多点会更提高代码可读性</strong></em><br>除此之外还可以去vs里查看更多Raycast的重载<br><strong>注意</strong>：<em>这个layerMask一定要用LayerMask.GetMask<br>不要用LayerMask.NameToLayer去得到当前蒙版的级别<br>因为这个参数里面的Layermask是2的当前层级的次方</em></p>
-<ul>
-<li>RaycastHit（上一个的函数里面有一个参数是这个）<br> 这个可以提供你一个介值使用out参数传递给上面的函数在那里面使用使用完以后这个RaycastHit类型参数就有值可以使用了，可以吧有值的这个参数当做gameobject类型使用。<blockquote>
-<h2 id="鼠标选择物体"><a href="#鼠标选择物体" class="headerlink" title="鼠标选择物体"></a>鼠标选择物体</h2></blockquote>
-</li>
-<li>首先放三个物体<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/6947ac949f4c4f6a81476ebbb5d33cf8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_16,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" class="lazyload"></li>
-<li>然后给他们的Layer改一下<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/69dd7eff7a984a9dbf21cc19294af961.png" alt="在这里插入图片描述" class="lazyload"></li>
-<li>写上ray相关的代码</li>
-</ul>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="built_in">int</span> TargetMask;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        TargetMask = LayerMask.GetMask(<span class="string">&quot;Target&quot;</span>);<span class="comment">//得到的</span></span><br><span class="line">        print(TargetMask);<span class="comment">//输出看看是不是得到了值</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);<span class="comment">//从鼠标所在位置发射射线</span></span><br><span class="line">        RaycastHit hit;<span class="comment">//设置一个被射线射到的物体</span></span><br><span class="line">        <span class="keyword">if</span> (Physics.Raycast(ray,<span class="keyword">out</span> hit,<span class="number">100.0F</span>,TargetMask))<span class="comment">//使这个射线往原定方向射100米并且只与你设置的Layer层级相撞</span></span><br><span class="line">        &#123;</span><br><span class="line">            Vector3 offset = <span class="keyword">new</span> Vector3(<span class="number">15</span>,<span class="number">0</span>,<span class="number">0</span>);<span class="comment">//目标物体偏移量</span></span><br><span class="line">            hit.transform.position += offset;<span class="comment">//使目标物体偏移</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>当鼠标移至目标位置会有下图的效果<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/2c5bd98893904e15872f44fc295812ce.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_11,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" class="lazyload"></li>
-<li>如有需要可以设置成需要按什么键的时候鼠标在上面才会移动<blockquote>
-<h2 id="目标匹配"><a href="#目标匹配" class="headerlink" title="目标匹配"></a>目标匹配</h2></blockquote>
-</li>
-<li>函数：</li>
-</ul>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MatchTarget</span> (<span class="params">Vector3 matchPosition, Quaternion matchRotation, AvatarTarget targetBodyPart, MatchTargetWeightMask weightMask, <span class="built_in">float</span> startNormalizedTime,<span class="built_in">float</span> targetNormalizedTime</span>)</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>如何使用：<br>使你的targetBodyPart（你想要动的身体部位）在你执行的动作的开始时间startNormalizedTime到最终时间targetNormalizedTime之间，移向目标地方matchRotation,matchPosition（目标地点的位置和旋转值）并且你需要定下一个weightMask（x,y,x方向上的权重）去移动</li>
-<li><strong>用于攀爬和移动之类，用途广泛</strong></li>
-</ul>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-            
-        </article>
-    </div>
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>John Doe<br>
     
-    <div class="nexmoe-post">
-        <a href="/2022/04/09/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%8F%8A%E6%A0%B9%E7%9B%AE%E5%BD%95%E8%BF%98%E6%9C%89%E6%96%9C%E6%9D%A0%E4%B8%8E%E5%8F%8D%E6%96%9C%E6%9D%A0%E7%9A%84%E5%8C%BA%E5%88%AB/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="https://cdn.jsdelivr.net/gh/tangyuxian/blog_image@master/background/xiaomai.jpg" data-sizes="auto" alt="相对路径及根目录还有斜杠与反斜杠的区别" class="lazyload">
-                    <h1>相对路径及根目录还有斜杠与反斜杠的区别</h1>
-                </div>
-            
-        </a>
+    <strong>Link：</strong><a href="http://example.com/2022/04/10/cSharp%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82/" title="http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;04&#x2F;10&#x2F;cSharp%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;04&#x2F;10&#x2F;cSharp%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82&#x2F;</a><br>
+
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
         
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2022年04月09日</a>
-            <a><i class="nexmoefont icon-areachart"></i>172 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-        </div>
 
-        <article>
-            
-                <blockquote>
-<h2 id="相对路径的表示"><a href="#相对路径的表示" class="headerlink" title="相对路径的表示"></a>相对路径的表示</h2></blockquote>
-<ul>
-<li>.&#x2F;表示的是当前层级</li>
-<li>..&#x2F;表示的是上一级</li>
-<li>.的个数减一就是往前几级</li>
-<li>如果不填什么层级直接就打文件名，那么就会以根目录(即exe程序所在路径，或者为sln文件所在路径)为基准往下找，直到找到这个文件为止。</li>
-<li>例如：<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/cd42b624454346458a5539df9f7705df.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" class="lazyload"></li>
-</ul>
-<p><em><strong>注意：这个往下只是根目录往下，当然也只有你不写层级的时候才会这么找，其他的就不行</strong></em></p>
-<blockquote>
-<h2 id="“-x2F-“与”-“"><a href="#“-x2F-“与”-“" class="headerlink" title="“&#x2F;“与”\“"></a>“&#x2F;“与”\“</h2></blockquote>
-<ul>
-<li>“\“在代码中这个是转义字符所以写地址的时候要写”\\“</li>
-<li>“&#x2F;“写地址是时候如果为斜杠则只用写一个</li>
-</ul>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2022/04/09/Git%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E8%AF%B4%E6%98%8E/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="https://cdn.jsdelivr.net/gh/tangyuxian/blog_image@master/background/xiaomai.jpg" data-sizes="auto" alt="Git的使用与说明" class="lazyload">
-                    <h1>Git的使用与说明</h1>
-                </div>
-            
-        </a>
-        
         <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2022年04月09日</a>
-            <a><i class="nexmoefont icon-areachart"></i>649 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
-
-        <article>
-            
-                <p>介绍Git的使用</p>
-<h2 id="Git指令介绍"><a href="#Git指令介绍" class="headerlink" title="Git指令介绍"></a>Git指令介绍</h2><ul>
-<li>git init （初始化仓库）</li>
-<li>git add [.]            （全部文件加入暂存区,后面那个点改成文件名是将改文件名加入暂存）</li>
-<li>git status   （得到当前git内部的状态）</li>
-<li>touch ad.txt （给当前目录下增加一个叫ad的txt’文件）</li>
-<li>git commit -m ‘此处写描述 ‘（将暂存区的文件放进本地仓库）</li>
-<li>ls （查询当前仓库内的东西）</li>
-<li>vi （打开文件写东西）</li>
-<li>wp （关闭文件）</li>
-<li>cat    ad.txt[文件名]（查看文件内容）</li>
-<li>rm -rf ad.txt [文件名]  (删除该文件)</li>
-<li>git rm ad.txt [文件名]  （在git中删除该文件）</li>
-<li>git clone 仓库地址 （将此仓库地址的东西克隆到本地仓库）</li>
-<li>git config -list （查询本地git软件内的信息。。包括个人信息和邮箱）</li>
-<li>clear （清屏）</li>
-<li>git config –global user.name ‘此处写github的用户名’ （初始化用户名）</li>
-<li>git config –global user.email’此处写github的邮箱’ （初始化用户邮箱）</li>
-<li>git remote add origin  [此处写你要上传的地址] （增加上传地址）</li>
-<li>git push （全部上传）</li>
-<li>git push -u origin main （将主分支上传）</li>
-<li>git branch  （查看本地分支）</li>
-<li>git branch -r （查看远程分支）</li>
-<li>git branch [此处写分支名] （增加一个分支，名字自取）</li>
-<li>git branch -d [分支名]  （删除指定分支）</li>
-<li>git merge [分支名]  （合并指定分支到当前分支）</li>
-<li>git ls-files （查看本地仓库内的文件）</li>
-<li>git remote remove origin （断开远程连接）</li>
-<li>git remote -v （查看远程仓库）</li>
-<li>$ git push -u origin1 master （将origin1合并到master内）</li>
-</ul>
-<p>注意：蓝色的名字是你当前的分支<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/da8d9162dea04c949b339da04137959c.png" alt="在这里插入图片描述" class="lazyload"></p>
-<blockquote>
-<h2 id="Git-上传步骤"><a href="#Git-上传步骤" class="headerlink" title="Git 上传步骤"></a>Git 上传步骤</h2></blockquote>
-<ul>
-<li>首先把用户名和邮箱填上</li>
-</ul>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/6ffd7759d68c4824b9c015393c899cd6.png#pic_center" alt="在这里插入图片描述" class="lazyload"></p>
-<ul>
-<li><p>然后获取公钥<br>使用   ssh-keygen -t rsa  指令在电脑里面.ssh 里面使用</p>
-</li>
-<li><p>ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;</a></p>
-</li>
-<li><p>让git与github建立连接</p>
-</li>
-</ul>
-<ol>
-<li>先实例化本地仓库 使用git init</li>
-<li>使用add 来加入暂存区</li>
-<li>使用commit 放进仓库</li>
-<li>使用remote 增加上传地址</li>
-</ol>
-<ul>
-<li>注意格式为&#x2F;&#x2F;不是&#x2F;</li>
-<li><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/ffdbf26cb5ff44899f89e61bb1ba8621.png#pic_center" alt="在这里插入图片描述" class="lazyload"></li>
-</ul>
-<ol start="5">
-<li>使用push上传</li>
-</ol>
-<blockquote>
-<h2 id="GitHub-网站搭建"><a href="#GitHub-网站搭建" class="headerlink" title="GitHub 网站搭建"></a>GitHub 网站搭建</h2></blockquote>
-<ol>
-<li><p>在已经创建了的仓库内点击设置<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/e09f3e31328842908022031cc2d0731f.png" alt="在这里插入图片描述" class="lazyload"></p>
-</li>
-<li><p>进入page页面<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/aba0d1078c034b7bb8fa57ee5e757962.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_9,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" class="lazyload"></p>
-</li>
-<li><p>点击下面按钮创建网页<img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/9d2228b86aa1436ca65c88dd6fb98d9c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_16,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" class="lazyload"></p>
-</li>
-<li><p>通过https:&#x2F;&#x2F;[用户名].github.io&#x2F;[仓库名]&#x2F;访问</p>
-</li>
-</ol>
-<blockquote>
-<h2 id="创建个人站点"><a href="#创建个人站点" class="headerlink" title="创建个人站点"></a>创建个人站点</h2></blockquote>
-<ol>
-<li>首先创建一个仓库（名字要为（[用户名].github.io））</li>
-<li>在仓库里面创建一个叫index.html的文件<br>如图</li>
-</ol>
-<ul>
-<li><p>创建仓库<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/cafbaeebe1b546c4a4eedee19f966ab7.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_17,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述" class="lazyload"></p>
-</li>
-<li><p>创建文件<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/10e753904ba1409e853aa116d8d3a812.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_15,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" class="lazyload"></p>
-</li>
-<li><p><strong>注意这个仓库里面只能有html文件</strong></p>
-</li>
-</ul>
-<ol start="3">
-<li>通过[用户名].github.io访问</li>
-</ol>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Xx411m7kn?p=10">git的学习视频</a></li>
-</ul>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-            
-        </article>
-    </div>
     
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/cSharp/" rel="tag">cSharp</a>
+    
+</div>
+
+    <div class="nexmoe-post-footer">
+        <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'r5zxC0st0DDjPA9auXzMV7HY-gzGzoHsz',
+        appKey: '3bqCsovpyfTPHUzTHovd3V3V'
+    })
+</script>
 </section>
+    </div>
+</div>
 
 
         <div class="nexmoe-post-right">
@@ -1186,7 +1022,7 @@
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
-<script src="/js/app.js?v=1649608791256"></script>
+<script src="/js/app.js?v=1649608791246"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>

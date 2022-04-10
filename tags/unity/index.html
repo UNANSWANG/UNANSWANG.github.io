@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>ANSWANG</title>
+  <title>Tags：unity - ANSWANG</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -18,7 +18,7 @@
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/tangyuxian/blog_image@master/head/head.jpg" type="image/png" />
   <meta property="og:type" content="website">
 <meta property="og:title" content="ANSWANG">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/tags/unity/index.html">
 <meta property="og:site_name" content="ANSWANG">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -28,7 +28,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_cksn56jaae6.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1649608791255">
+  <link rel="stylesheet" href="/css/style.css?v=1649608791261">
 <meta name="generator" content="Hexo 6.1.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -218,45 +218,6 @@
         <section class="nexmoe-posts">
     
     <div class="nexmoe-post">
-        <a href="/2022/04/10/cSharp%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="https://cdn.jsdelivr.net/gh/tangyuxian/blog_image@master/background/xiaomai.jpg" data-sizes="auto" alt="cSharp使用细节" class="lazyload">
-                    <h1>cSharp使用细节</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2022年04月10日</a>
-            <a><i class="nexmoefont icon-areachart"></i>499 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
-
-        <article>
-            
-                <blockquote>
-<h2 id="接口的使用细节"><a href="#接口的使用细节" class="headerlink" title="接口的使用细节"></a>接口的使用细节</h2><p>假如我要创建一个二重的接口需要以以下方法创建</p>
-</blockquote>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IList&lt;List&lt;<span class="built_in">int</span>&gt;&gt; arrs = <span class="keyword">new</span> List&lt;List&lt;<span class="built_in">int</span>&gt;&gt;();</span><br></pre></td></tr></table></figure>
-<p>前半部分为接口，后半部分为实例化部分，现在前半部分的接口为IList&lt;List<int>&gt;，相当于二维数组的第一层那部分为接口，里面的为实例化int型，后面要为这个接口赋值的话，也必须是IList&lt;List<int>&gt;类型，或者是List&lt;List<int>&gt;类型因为是其子类，哪怕是IList&lt;IList<int>&gt;都不行。</p>
-<ul>
-<li>IList&lt;T&gt;是泛型接口的基类</li>
-<li>List&lt;T&gt;是IList&lt;T&gt;的子类，也就是实例化了的类</li>
-<li>给IList&lt;T&gt;赋值还可以自定义一个他的子类，实现他的方法</li>
-<li>IList&lt;IList&lt;T&gt;&gt;类型可以被List&lt;IList&lt;T&gt;&gt;实例化，其中内部那个可以是我们实例化的IList接口垫任何子类<blockquote>
-<h2 id="二维List的输入与输出例子"><a href="#二维List的输入与输出例子" class="headerlink" title="二维List的输入与输出例子"></a>二维List的输入与输出例子</h2></blockquote>
-</li>
-</ul>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Test</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">       &#123;</span><br><span class="line">           Solution sol = <span class="keyword">new</span> Solution();</span><br><span class="line">           <span class="built_in">int</span>[] arr = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">100005</span>];</span><br><span class="line">           <span class="built_in">string</span> t = Console.ReadLine();</span><br><span class="line">           <span class="built_in">int</span> index = <span class="number">0</span>;</span><br><span class="line">           <span class="built_in">string</span>[] a = t.Split(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line">           <span class="keyword">foreach</span> (<span class="built_in">string</span> item <span class="keyword">in</span> a)</span><br><span class="line">           &#123;</span><br><span class="line">               arr[index++] = Convert.ToInt32(item);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="built_in">int</span>[] brr = <span class="keyword">new</span> <span class="built_in">int</span>[index];</span><br><span class="line">           Array.Copy(arr, brr, index);</span><br><span class="line">           <span class="built_in">int</span> tar = Convert.ToInt32(Console.ReadLine());</span><br><span class="line">           IList&lt;List&lt;<span class="built_in">int</span>&gt;&gt; arrs = sol.CombinationSum(brr, tar);</span><br><span class="line">           <span class="keyword">foreach</span> (List&lt;<span class="built_in">int</span>&gt; item <span class="keyword">in</span> arrs)</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">foreach</span> (<span class="built_in">int</span> i <span class="keyword">in</span> item)</span><br><span class="line">               &#123;</span><br><span class="line">                   Console.Write(i + <span class="string">&quot; &quot;</span>);</span><br><span class="line">               &#125;</span><br><span class="line">               Console.WriteLine();</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">public</span> IList&lt;List&lt;<span class="built_in">int</span>&gt;&gt; CombinationSum(<span class="built_in">int</span>[] candidates, <span class="built_in">int</span> target)</span><br><span class="line">       &#123;</span><br><span class="line">           IList&lt;List&lt;<span class="built_in">int</span>&gt;&gt; result = <span class="keyword">new</span> List&lt;List&lt;<span class="built_in">int</span>&gt;&gt;();</span><br><span class="line">           List&lt;<span class="built_in">int</span>&gt; t = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">           dfs(candidates,result,t,target,<span class="number">0</span>);</span><br><span class="line">           <span class="keyword">return</span> result;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span>(<span class="params"><span class="built_in">int</span>[] candidates,IList&lt;List&lt;<span class="built_in">int</span>&gt;&gt; result,List&lt;<span class="built_in">int</span>&gt; t,<span class="built_in">int</span> target,<span class="built_in">int</span> index</span>)</span></span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> (target==<span class="number">0</span>)</span><br><span class="line">           &#123;</span><br><span class="line">               result.Add(<span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;(t));</span><br><span class="line">               <span class="keyword">return</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span> (target &lt; <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">           <span class="keyword">for</span> (<span class="built_in">int</span> i = index; i &lt; candidates.Length; i++)</span><br><span class="line">           &#123;</span><br><span class="line">               t.Add(candidates[i]);</span><br><span class="line">               target -= candidates[i];</span><br><span class="line">               dfs(candidates,result,t,target,i);</span><br><span class="line">               target += candidates[i];</span><br><span class="line">               t.Remove(candidates[i]);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-
-<p>题目点这里](<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combination-sum/">https://leetcode-cn.com/problems/combination-sum/</a>)</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
         <a href="/2022/04/09/Ray%E8%AF%A6%E8%A7%A3%E9%BC%A0%E6%A0%87%E9%80%89%E5%8F%96%E7%89%A9%E5%93%81%E4%BB%A5%E5%8F%8A%E7%9B%AE%E6%A0%87%E5%8C%B9%E9%85%8D/">
             
                 <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
@@ -313,159 +274,6 @@
 <ul>
 <li>如何使用：<br>使你的targetBodyPart（你想要动的身体部位）在你执行的动作的开始时间startNormalizedTime到最终时间targetNormalizedTime之间，移向目标地方matchRotation,matchPosition（目标地点的位置和旋转值）并且你需要定下一个weightMask（x,y,x方向上的权重）去移动</li>
 <li><strong>用于攀爬和移动之类，用途广泛</strong></li>
-</ul>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2022/04/09/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%8F%8A%E6%A0%B9%E7%9B%AE%E5%BD%95%E8%BF%98%E6%9C%89%E6%96%9C%E6%9D%A0%E4%B8%8E%E5%8F%8D%E6%96%9C%E6%9D%A0%E7%9A%84%E5%8C%BA%E5%88%AB/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="https://cdn.jsdelivr.net/gh/tangyuxian/blog_image@master/background/xiaomai.jpg" data-sizes="auto" alt="相对路径及根目录还有斜杠与反斜杠的区别" class="lazyload">
-                    <h1>相对路径及根目录还有斜杠与反斜杠的区别</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2022年04月09日</a>
-            <a><i class="nexmoefont icon-areachart"></i>172 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-        </div>
-
-        <article>
-            
-                <blockquote>
-<h2 id="相对路径的表示"><a href="#相对路径的表示" class="headerlink" title="相对路径的表示"></a>相对路径的表示</h2></blockquote>
-<ul>
-<li>.&#x2F;表示的是当前层级</li>
-<li>..&#x2F;表示的是上一级</li>
-<li>.的个数减一就是往前几级</li>
-<li>如果不填什么层级直接就打文件名，那么就会以根目录(即exe程序所在路径，或者为sln文件所在路径)为基准往下找，直到找到这个文件为止。</li>
-<li>例如：<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/cd42b624454346458a5539df9f7705df.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" class="lazyload"></li>
-</ul>
-<p><em><strong>注意：这个往下只是根目录往下，当然也只有你不写层级的时候才会这么找，其他的就不行</strong></em></p>
-<blockquote>
-<h2 id="“-x2F-“与”-“"><a href="#“-x2F-“与”-“" class="headerlink" title="“&#x2F;“与”\“"></a>“&#x2F;“与”\“</h2></blockquote>
-<ul>
-<li>“\“在代码中这个是转义字符所以写地址的时候要写”\\“</li>
-<li>“&#x2F;“写地址是时候如果为斜杠则只用写一个</li>
-</ul>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2022/04/09/Git%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E8%AF%B4%E6%98%8E/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="https://cdn.jsdelivr.net/gh/tangyuxian/blog_image@master/background/xiaomai.jpg" data-sizes="auto" alt="Git的使用与说明" class="lazyload">
-                    <h1>Git的使用与说明</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2022年04月09日</a>
-            <a><i class="nexmoefont icon-areachart"></i>649 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
-
-        <article>
-            
-                <p>介绍Git的使用</p>
-<h2 id="Git指令介绍"><a href="#Git指令介绍" class="headerlink" title="Git指令介绍"></a>Git指令介绍</h2><ul>
-<li>git init （初始化仓库）</li>
-<li>git add [.]            （全部文件加入暂存区,后面那个点改成文件名是将改文件名加入暂存）</li>
-<li>git status   （得到当前git内部的状态）</li>
-<li>touch ad.txt （给当前目录下增加一个叫ad的txt’文件）</li>
-<li>git commit -m ‘此处写描述 ‘（将暂存区的文件放进本地仓库）</li>
-<li>ls （查询当前仓库内的东西）</li>
-<li>vi （打开文件写东西）</li>
-<li>wp （关闭文件）</li>
-<li>cat    ad.txt[文件名]（查看文件内容）</li>
-<li>rm -rf ad.txt [文件名]  (删除该文件)</li>
-<li>git rm ad.txt [文件名]  （在git中删除该文件）</li>
-<li>git clone 仓库地址 （将此仓库地址的东西克隆到本地仓库）</li>
-<li>git config -list （查询本地git软件内的信息。。包括个人信息和邮箱）</li>
-<li>clear （清屏）</li>
-<li>git config –global user.name ‘此处写github的用户名’ （初始化用户名）</li>
-<li>git config –global user.email’此处写github的邮箱’ （初始化用户邮箱）</li>
-<li>git remote add origin  [此处写你要上传的地址] （增加上传地址）</li>
-<li>git push （全部上传）</li>
-<li>git push -u origin main （将主分支上传）</li>
-<li>git branch  （查看本地分支）</li>
-<li>git branch -r （查看远程分支）</li>
-<li>git branch [此处写分支名] （增加一个分支，名字自取）</li>
-<li>git branch -d [分支名]  （删除指定分支）</li>
-<li>git merge [分支名]  （合并指定分支到当前分支）</li>
-<li>git ls-files （查看本地仓库内的文件）</li>
-<li>git remote remove origin （断开远程连接）</li>
-<li>git remote -v （查看远程仓库）</li>
-<li>$ git push -u origin1 master （将origin1合并到master内）</li>
-</ul>
-<p>注意：蓝色的名字是你当前的分支<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/da8d9162dea04c949b339da04137959c.png" alt="在这里插入图片描述" class="lazyload"></p>
-<blockquote>
-<h2 id="Git-上传步骤"><a href="#Git-上传步骤" class="headerlink" title="Git 上传步骤"></a>Git 上传步骤</h2></blockquote>
-<ul>
-<li>首先把用户名和邮箱填上</li>
-</ul>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/6ffd7759d68c4824b9c015393c899cd6.png#pic_center" alt="在这里插入图片描述" class="lazyload"></p>
-<ul>
-<li><p>然后获取公钥<br>使用   ssh-keygen -t rsa  指令在电脑里面.ssh 里面使用</p>
-</li>
-<li><p>ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;</a></p>
-</li>
-<li><p>让git与github建立连接</p>
-</li>
-</ul>
-<ol>
-<li>先实例化本地仓库 使用git init</li>
-<li>使用add 来加入暂存区</li>
-<li>使用commit 放进仓库</li>
-<li>使用remote 增加上传地址</li>
-</ol>
-<ul>
-<li>注意格式为&#x2F;&#x2F;不是&#x2F;</li>
-<li><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/ffdbf26cb5ff44899f89e61bb1ba8621.png#pic_center" alt="在这里插入图片描述" class="lazyload"></li>
-</ul>
-<ol start="5">
-<li>使用push上传</li>
-</ol>
-<blockquote>
-<h2 id="GitHub-网站搭建"><a href="#GitHub-网站搭建" class="headerlink" title="GitHub 网站搭建"></a>GitHub 网站搭建</h2></blockquote>
-<ol>
-<li><p>在已经创建了的仓库内点击设置<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/e09f3e31328842908022031cc2d0731f.png" alt="在这里插入图片描述" class="lazyload"></p>
-</li>
-<li><p>进入page页面<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/aba0d1078c034b7bb8fa57ee5e757962.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_9,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" class="lazyload"></p>
-</li>
-<li><p>点击下面按钮创建网页<img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/9d2228b86aa1436ca65c88dd6fb98d9c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_16,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" class="lazyload"></p>
-</li>
-<li><p>通过https:&#x2F;&#x2F;[用户名].github.io&#x2F;[仓库名]&#x2F;访问</p>
-</li>
-</ol>
-<blockquote>
-<h2 id="创建个人站点"><a href="#创建个人站点" class="headerlink" title="创建个人站点"></a>创建个人站点</h2></blockquote>
-<ol>
-<li>首先创建一个仓库（名字要为（[用户名].github.io））</li>
-<li>在仓库里面创建一个叫index.html的文件<br>如图</li>
-</ol>
-<ul>
-<li><p>创建仓库<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/cafbaeebe1b546c4a4eedee19f966ab7.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_17,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述" class="lazyload"></p>
-</li>
-<li><p>创建文件<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/10e753904ba1409e853aa116d8d3a812.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_15,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" class="lazyload"></p>
-</li>
-<li><p><strong>注意这个仓库里面只能有html文件</strong></p>
-</li>
-</ul>
-<ol start="3">
-<li>通过[用户名].github.io访问</li>
-</ol>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Xx411m7kn?p=10">git的学习视频</a></li>
 </ul>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
             
@@ -1186,7 +994,7 @@
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
-<script src="/js/app.js?v=1649608791256"></script>
+<script src="/js/app.js?v=1649608791262"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
