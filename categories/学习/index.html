@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类: 学习, ANSWANG">
+    <meta name="keywords" content="分类: 学习, ANSWANG的博客">
     <meta name="description" content="ANSWANG">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -19,7 +19,7 @@
 
     
 
-    <title>分类: 学习 | ANSWANG</title>
+    <title>分类: 学习 | ANSWANG的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -46,7 +46,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">ANSWANG</span>
+                    <span class="logo-span">ANSWANG的博客</span>
                 </a>
             </div>
             
@@ -145,7 +145,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">ANSWANG</div>
+        <div class="logo-name">ANSWANG的博客</div>
         <div class="logo-desc">
             
             ANSWANG
@@ -314,7 +314,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                欢迎来到ANSWANG的博客
                 
             </div>
 
@@ -378,11 +378,11 @@
                 </a>
                 
                 
-                <a href="/categories/%E5%AD%A6%E4%B9%A0/" title="学习: 2">
+                <a href="/categories/%E5%AD%A6%E4%B9%A0/" title="学习: 12">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             style="background-color: #F5EEF8;">学习
-                        <span class="tag-length">2</span>
+                        <span class="tag-length">12</span>
                     </span>
                 </a>
                 
@@ -409,28 +409,26 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/04/10/csharp-shi-yong-xi-jie/">
+                    <a href="/2022/04/15/unity-ji-csharp-xue-ji-bi-ji/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="cSharp使用细节">
+                            <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="unity及cSharp学记笔记">
                             
-                            <span class="card-title">cSharp使用细节</span>
+                            <span class="card-title">unity及cSharp学记笔记</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-接口的使用细节假如我要创建一个二重的接口需要以以下方法创建
+                                @TOC
 
-1IList&lt;List&lt;int&gt;&gt; arrs = new List&lt;List&lt;int&gt;&gt;();
-前半部分为接口，后半部分为实例化
+1.设计模式六大原则1.单一职责原则单一职责原则是实现高内聚、低耦合的指导方针，保持类中职责单一，方便拓展。2.开发封闭原则指对拓展开放，对修改封闭，使程序更好的更新他的功能。3.里氏替换原则所有的基类都能透明的使用其子类。扩充
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
                             </span>
                             <span class="publish-author">
                                 
@@ -452,6 +450,10 @@
                             <span class="chip bg-color">cSharp</span>
                         </a>
                         
+                        <a href="/tags/unity/">
+                            <span class="chip bg-color">unity</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
@@ -459,28 +461,29 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/04/09/ray-xiang-jie-shu-biao-xuan-qu-wu-pin-yi-ji-mu-biao-pi-pei/">
+                    <a href="/2022/04/15/gcd-zui-da-gong-yue-shu/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Ray详解鼠标选取物品以及目标匹配">
+                            <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="gcd最大公约数">
                             
-                            <span class="card-title">Ray详解鼠标选取物品以及目标匹配</span>
+                            <span class="card-title">gcd最大公约数</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-Ray
+                                gcd函数
+10进制取gcd
 
-Ray (origin : Vector3, direction : Vector3)Origin 是射线的中心Direction 是射线的长度
-Ray ray = Camera.main.ScreenPointToRay(In
+首先来个简单的gcd函数（递归的），应该一看就懂，这边就不讲了。
+123int gcd(int a,int b){    return a%b==0?b:gcd(b,a%b);}
+下面是优化，跟上面原理差不多
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
                             </span>
                             <span class="publish-author">
                                 
@@ -498,8 +501,452 @@ Ray ray = Camera.main.ScreenPointToRay(In
                     
                     <div class="card-action article-tags">
                         
+                        <a href="/tags/cSharp/">
+                            <span class="chip bg-color">cSharp</span>
+                        </a>
+                        
+                        <a href="/tags/c/">
+                            <span class="chip bg-color">c++</span>
+                        </a>
+                        
+                        <a href="/tags/%E7%AE%97%E6%B3%95/">
+                            <span class="chip bg-color">算法</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/04/15/cuo-pai-jian-pai-lie-zu-he-gong-shi/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="错排兼排列组合公式">
+                            
+                            <span class="card-title">错排兼排列组合公式</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                错排&gt; 概念
+首先引进一个概念，什么是错排；错排就是讲一个有顺序的数组，其中的每个数，排列后不在原本的位置。例如 1  2  3  4  5其中1不能放在第一个地方，2不能放在第二个地方，以此类推。这里有张图给你理解接下来要给出的公式
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/c/">
+                            <span class="chip bg-color">c++</span>
+                        </a>
+                        
+                        <a href="/tags/%E7%AE%97%E6%B3%95/">
+                            <span class="chip bg-color">算法</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/04/15/he-fu-man-shu-zui-you-er-cha-shu/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/36.jpg" class="responsive-img" alt="赫夫曼树（最优二叉树）">
+                            
+                            <span class="card-title">赫夫曼树（最优二叉树）</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+赫夫曼树介绍概念赫夫曼树是最优二叉树的别名，他通过每个叶子节点算权值和，取最小权值和的那棵树便是哈夫曼树。如何实现将所有数排成一个数组内，找到其质量（他的价值）最小的两个，将其合成一颗树，左边是最小的，右边是第二小的，然后将其质量相加便是
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/c/">
+                            <span class="chip bg-color">c++</span>
+                        </a>
+                        
+                        <a href="/tags/%E7%AE%97%E6%B3%95/">
+                            <span class="chip bg-color">算法</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/04/15/quan-pai-lie-chao-jian-dan-di-gui/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="全排列（超简单递归）">
+                            
+                            <span class="card-title">全排列（超简单递归）</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+将n个数进行全排列话不多说，直接给代码：
+
+12345678910111213141516171819202122232425262728293031323334353637383940#include&lt;iostream&gt;#i
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/c/">
+                            <span class="chip bg-color">c++</span>
+                        </a>
+                        
+                        <a href="/tags/%E7%AE%97%E6%B3%95/">
+                            <span class="chip bg-color">算法</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/04/15/er-cha-shu-de-fei-di-gui-diao-yong/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="二叉树的非递归调用">
+                            
+                            <span class="card-title">二叉树的非递归调用</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                @TOC
+
+前序遍历将左边孩子全放进栈并输出，遇到空的就访问栈的头节点的右孩子（如此往复直到找到有右孩子的节点。）代码如下：
+
+1234567891011121314151617void presq(bitree s) {	stack&lt
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/c/">
+                            <span class="chip bg-color">c++</span>
+                        </a>
+                        
+                        <a href="/tags/%E7%AE%97%E6%B3%95/">
+                            <span class="chip bg-color">算法</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/04/15/ar-he-vuforia/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="AR和Vuforia">
+                            
+                            <span class="card-title">AR和Vuforia</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+AR的使用（基础篇）
+
+引入packageManager里面的
+
+添加AR专用的摄像头，并关闭原有摄像头
+
+添加定位图片
+
+然后就将我们要在AR中显示的物体放到这个Image里面作为子物体就行
+
+Image的更换（保姆级教学）
+
+
+
+如果
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/cSharp/">
+                            <span class="chip bg-color">cSharp</span>
+                        </a>
+                        
                         <a href="/tags/unity/">
                             <span class="chip bg-color">unity</span>
+                        </a>
+                        
+                        <a href="/tags/AR/">
+                            <span class="chip bg-color">AR</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/04/15/yi-bu-bian-cheng-xiang-jie/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="异步编程详解">
+                            
+                            <span class="card-title">异步编程详解</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+异步调用的函数介绍及解释
+
+AsyncCallback(IAsyncResult re) - - 回调函数（委托类型）他的参数为异步结果这个异步结果可以为任何函数
+IAsyncResult - - 接口类型函数可以实现一些函数的赋值例如：
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/cSharp/">
+                            <span class="chip bg-color">cSharp</span>
+                        </a>
+                        
+                        <a href="/tags/unity/">
+                            <span class="chip bg-color">unity</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/04/15/java-xiao-you-xi-zhi-fei-ji-da-zhan/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="java小游戏之飞机大战">
+                            
+                            <span class="card-title">java小游戏之飞机大战</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+飞机大战脚本组成1.有一个所有物体的父物体GameObject，然后就是一堆物体继承于他，等到他的属性于函数。2.窗口组件3.工具脚本(负责做一些杂事和存放图片)
+代码
+
+GameObject
+
+123456789101112131415
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/java/">
+                            <span class="chip bg-color">java</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/04/15/csharp-he-sqlserver-shu-ju-ku-lian-jie/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="csharp和SqlServer数据库连接">
+                            
+                            <span class="card-title">csharp和SqlServer数据库连接</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+代码如下，请看注释
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/cSharp/">
+                            <span class="chip bg-color">cSharp</span>
+                        </a>
+                        
+                        <a href="/tags/SqlServer/">
+                            <span class="chip bg-color">SqlServer</span>
                         </a>
                         
                     </div>
@@ -510,6 +957,30 @@ Ray ray = Camera.main.ScreenPointToRay(In
         </div>
     </article>
 </main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a class="left btn-floating btn-large disabled">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">1 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/page/2/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
 
 
 
@@ -584,7 +1055,7 @@ Ray ray = Camera.main.ScreenPointToRay(In
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.9k</span>
+                        class="white-color">10k</span>
             
             
             
