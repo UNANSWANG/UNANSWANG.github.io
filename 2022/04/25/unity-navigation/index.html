@@ -4,17 +4,18 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="相对路径及根目录还有斜杠与反斜杠的区别, ANSWANG的博客">
-    <meta name="description" content="
-相对路径的表示
+    <meta name="keywords" content="Unity Navigation, ANSWANG的博客">
+    <meta name="description" content="自动寻路的配置
+为路上的地面和障碍物勾选好好static
 
-./表示的是当前层级
-../表示的是上一级
-.的个数减一就是往前几级
-如果不填什么层级直接就打文件名，那么就会以根目录(即exe程序所在路径，或者为sln文件所在路径)为基准往下找，直到找到这个文件为止。
-例如：
+在导航面板出烘焙
 
-注意">
+玩家身上挂载代理组件
+
+烘焙完成
+
+
+其中Navigation static是一般障碍物的，下面那个Off Mesh Link Generation是可跳跃的地">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -37,7 +38,7 @@
     </style>
 
 
-    <title>相对路径及根目录还有斜杠与反斜杠的区别 | ANSWANG的博客</title>
+    <title>Unity Navigation | ANSWANG的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -329,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">相对路径及根目录还有斜杠与反斜杠的区别</h1>
+                    <h1 class="description center-align post-title">Unity Navigation</h1>
                 </div>
             </div>
         </div>
@@ -450,8 +451,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Vs/">
-                                <span class="chip bg-color">Vs</span>
+                            <a href="/tags/unity/">
+                                <span class="chip bg-color">unity</span>
                             </a>
                         
                     </div>
@@ -462,8 +463,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BB%86%E8%8A%82%E9%97%AE%E9%A2%98/" class="post-category">
-                                细节问题
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                学习
                             </a>
                         
                     </div>
@@ -475,21 +476,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-09
+                    2022-04-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-11
+                    2022-04-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    168
+                    275
                 </div>
                 
 
@@ -516,22 +517,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<h2 id="相对路径的表示"><a href="#相对路径的表示" class="headerlink" title="相对路径的表示"></a>相对路径的表示</h2></blockquote>
-<ul>
-<li>./表示的是当前层级</li>
-<li>../表示的是上一级</li>
-<li>.的个数减一就是往前几级</li>
-<li>如果不填什么层级直接就打文件名，那么就会以根目录(即exe程序所在路径，或者为sln文件所在路径)为基准往下找，直到找到这个文件为止。</li>
-<li>例如：<br><img src="https://img-blog.csdnimg.cn/cd42b624454346458a5539df9f7705df.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></li>
-</ul>
-<p><em><strong>注意：这个往下只是根目录往下，当然也只有你不写层级的时候才会这么找，其他的就不行</strong></em></p>
-<blockquote>
-<h2 id="“-x2F-“与”-“"><a href="#“-x2F-“与”-“" class="headerlink" title="“/“与”\“"></a>“/“与”\“</h2></blockquote>
-<ul>
-<li>“\“在代码中这个是转义字符所以写地址的时候要写”\\“</li>
-<li>“/“写地址是时候如果为斜杠则只用写一个</li>
-</ul>
+                <h2 id="自动寻路的配置"><a href="#自动寻路的配置" class="headerlink" title="自动寻路的配置"></a>自动寻路的配置</h2><ol>
+<li><p>为路上的地面和障碍物勾选好好static<br><img src="https://img-blog.csdnimg.cn/d36df22e41ac40d0a533f60b0cf41cba.png" alt="请添加图片描述"></p>
+</li>
+<li><p>在导航面板出烘焙<br><img src="https://img-blog.csdnimg.cn/246fd91672304e198eeae4a12f61d736.png" alt="在这里插入图片描述"></p>
+</li>
+<li><p>玩家身上挂载代理组件<br><img src="https://img-blog.csdnimg.cn/abff453a20734f5aa13b023a8197ff84.png" alt="在这里插入图片描述"></p>
+</li>
+<li><p>烘焙完成<br><img src="https://img-blog.csdnimg.cn/5fedfa92d28e42db9d0c7ebd5151c5fc.png" alt="在这里插入图片描述"></p>
+</li>
+</ol>
+<p>其中Navigation static是一般障碍物的，下面那个Off Mesh Link Generation是可跳跃的地面勾选的这样才能在可跳跃面板搜到他。</p>
+<h2 id="部分代码实现"><a href="#部分代码实现" class="headerlink" title="部分代码实现"></a>部分代码实现</h2><p>玩家类挂在玩家身上</p>
+<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.AI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Player</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">private</span> NavMeshAgent agent;</span><br><span class="line">    <span class="keyword">private</span> LineRenderer lineRender;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    {</span><br><span class="line">        agent = transform.GetComponent&lt;NavMeshAgent&gt;();</span><br><span class="line">        lineRender = transform.GetComponent&lt;LineRenderer&gt;();</span><br><span class="line">        <span class="keyword">if</span> (agent==<span class="literal">null</span>)</span><br><span class="line">        {</span><br><span class="line">            Debug.LogError(<span class="string">"未找到代理！！！"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    {</span><br><span class="line">        DrawLine();</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MoveToTarget</span>(<span class="params">Vector3 tar</span>)</span></span><br><span class="line">    {</span><br><span class="line">        agent.SetDestination(tar);</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DrawLine</span>()</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (lineRender!=<span class="literal">null</span>)<span class="comment">//在外面给该物体身上挂载一个LineRender组件</span></span><br><span class="line">        {</span><br><span class="line">            lineRender.positionCount = agent.path.corners.Length;</span><br><span class="line">            lineRender.SetPositions(agent.path.corners);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>挂在其他物体上控制玩家的代码</p>
+<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerController</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">public</span> Player currentAgent;</span><br><span class="line">    <span class="keyword">public</span> RaycastHit hit;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (Input.GetMouseButton(<span class="number">1</span>))</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),<span class="keyword">out</span> hit,<span class="number">1000</span>,<span class="number">1</span>&lt;&lt;<span class="number">8</span>))</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span> (currentAgent!=<span class="literal">null</span>)</span><br><span class="line">                {</span><br><span class="line">                    currentAgent.MoveToTarget(hit.point);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>此处只做出了移动，跳跃和爬楼梯可以去B站看<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wo4y1o7Wm?p=1">视频</a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -558,7 +561,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/04/09/xiang-dui-lu-jing-ji-gen-mu-lu-huan-you-xie-gang-yu-fan-xie-gang-de-qu-bie/">http://example.com/2022/04/09/xiang-dui-lu-jing-ji-gen-mu-lu-huan-you-xie-gang-yu-fan-xie-gang-de-qu-bie/</a>
+                    <a href="http://example.com/2022/04/25/unity-navigation/">http://example.com/2022/04/25/unity-navigation/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -596,8 +599,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Vs/">
-                                    <span class="chip bg-color">Vs</span>
+                                <a href="/tags/unity/">
+                                    <span class="chip bg-color">unity</span>
                                 </a>
                             
                         </div>
@@ -982,17 +985,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/09/ray-xiang-jie-shu-biao-xuan-qu-wu-pin-yi-ji-mu-biao-pi-pei/">
+                <a href="/2022/04/25/unity-navigation/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/33.jpg" class="responsive-img" alt="Ray详解鼠标选取物品以及目标匹配">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Unity Navigation">
                         
-                        <span class="card-title">Ray详解鼠标选取物品以及目标匹配</span>
+                        <span class="card-title">Unity Navigation</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1002,9 +1006,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1017,6 +1021,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1035,13 +1040,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/09/git-de-shi-yong-yu-shuo-ming/">
+                <a href="/2022/04/15/unity-ji-csharp-xue-ji-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Git的使用与说明">
+                        <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="unity及cSharp学记笔记">
                         
-                        <span class="card-title">Git的使用与说明</span>
+                        <span class="card-title">unity及cSharp学记笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1052,14 +1057,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    软件使用
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
                                 </a>
                             
                             
@@ -1069,8 +1074,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/cSharp/">
+                        <span class="chip bg-color">cSharp</span>
+                    </a>
+                    
+                    <a href="/tags/unity/">
+                        <span class="chip bg-color">unity</span>
                     </a>
                     
                 </div>
