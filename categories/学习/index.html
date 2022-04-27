@@ -378,20 +378,20 @@
                 
                 
                 
-                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" title="软件使用: 1">
+                <a href="/categories/%E5%AD%A6%E4%B9%A0/" title="学习: 13">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F9EBEA;">软件使用
-                        <span class="tag-length">1</span>
+                             chip-active "
+                            style="background-color: #F9EBEA;">学习
+                        <span class="tag-length">13</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E5%AD%A6%E4%B9%A0/" title="学习: 13">
+                <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" title="软件使用: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F5EEF8;">学习
-                        <span class="tag-length">13</span>
+                             chip-default "
+                            style="background-color: #F5EEF8;">软件使用
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -542,8 +542,10 @@
 10进制取gcd
 
 首先来个简单的gcd函数（递归的），应该一看就懂，这边就不讲了。
-123int gcd(int a,int b){    return a%b==0?b:gcd(b,a%b);}
-下面是优化，跟上面原理差不多
+int gcd(int a,int b){
+    return a%b==0?b:gcd(b,a%b);
+}
+下面是优化，跟上面原理差不多，
                             
                         </div>
                         <div class="publish-info">
@@ -702,7 +704,10 @@
                                 
 将n个数进行全排列话不多说，直接给代码：
 
-12345678910111213141516171819202122232425262728293031323334353637383940#include&lt;iostream&gt;#i
+#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;algorithm&gt;
+#include&lt;string.h&gt
                             
                         </div>
                         <div class="publish-info">
@@ -756,7 +761,9 @@
 
 前序遍历将左边孩子全放进栈并输出，遇到空的就访问栈的头节点的右孩子（如此往复直到找到有右孩子的节点。）代码如下：
 
-1234567891011121314151617void presq(bitree s) {	stack&lt
+void presq(bitree s) {
+	stack&lt;bitree&gt; t;
+	bitree v
                             
                         </div>
                         <div class="publish-info">
@@ -935,7 +942,10 @@ IAsyncResult - - 接口类型函数可以实现一些函数的赋值例如：
 
 GameObject
 
-123456789101112131415
+package object;
+
+
+imp
                             
                         </div>
                         <div class="publish-info">
@@ -1321,3 +1331,6 @@ $(function () {
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>

@@ -479,7 +479,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-15
+                    2022-04-27
                 </div>
                 
 
@@ -508,6 +508,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -518,23 +521,85 @@
 <h2 id="1-设计模式六大原则"><a href="#1-设计模式六大原则" class="headerlink" title="1.设计模式六大原则"></a>1.设计模式六大原则</h2><p><strong>1.单一职责原则</strong><br>单一职责原则是实现高内聚、低耦合的指导方针，保持类中职责单一，方便拓展。<br><strong>2.开发封闭原则</strong><br>指对拓展开放，对修改封闭，使程序更好的更新他的功能。<br><strong>3.里氏替换原则</strong><br>所有的基类都能透明的使用其子类。<br>扩充:保持基类与子类的字段与方法一致可以使其用基类完美的使用子类实现多态，<br>如果子类有属于自己的独特方法，则需实例化子类而不是通过基类实例化。<br><strong>4.依赖倒转原则</strong><br>抽象不应该依赖于细节，细节应当依赖于抽象。换言之，要针对接口编程，而不是针对实现编程。<br><strong>5.迪米特原则</strong><br>一个类与另一个类发生联系使用第三个类进行沟通，减少类与类之间的聚合。<br><strong>6.合成聚合复用原则</strong><br>能使用聚合就不去使用继承，提高代码的复用和灵活性。<br><em><strong>总结：六大原则都是为了“弱耦合，强聚合”服务。</strong></em></p>
 <h2 id="2-好用的单例模式"><a href="#2-好用的单例模式" class="headerlink" title="2.好用的单例模式"></a>2.好用的单例模式</h2></blockquote>
 <p> 对于unity中的场景切换，我们经常会需要使用一些切换场景后依旧可以使用甚至是从其他场景<br> 继承过来变量的值，这时可以使用函数</p>
-<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DontDestroyOnLoad(Object Target);<span class="comment">//切换场景时不会被清除</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token function">DontDestroyOnLoad</span><span class="token punctuation">(</span><span class="token class-name">Object</span> Target<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//切换场景时不会被清除</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>使变量唯一便可使用单例模式，代码如下:</p>
-<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> GameManager Instance;<span class="comment">//单例模式只让存在一个</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Awake</span>()<span class="comment">//在启动时检查</span></span></span><br><span class="line">{</span><br><span class="line">    CheckGameobject();</span><br><span class="line">    CheckSingle();</span><br><span class="line">}</span><br><span class="line">   </span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">CheckGameobject</span>()<span class="comment">//删掉tag不是GM的Gamemanger</span></span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">if</span> (tag==<span class="string">"GM"</span>)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    Destroy(<span class="keyword">this</span>);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">CheckSingle</span>()<span class="comment">//删掉多余的GameManager</span></span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">if</span> (Instance==<span class="literal">null</span>)</span><br><span class="line">    {</span><br><span class="line">        Instance = <span class="keyword">this</span>;</span><br><span class="line">        DontDestroyOnLoad(gameObject);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    Destroy(<span class="keyword">this</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">GameManager</span> Instance<span class="token punctuation">;</span><span class="token comment">//单例模式只让存在一个</span>
+<span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Awake</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//在启动时检查</span>
+<span class="token punctuation">{</span>
+    <span class="token function">CheckGameobject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">CheckSingle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+   
+<span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">CheckGameobject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//删掉tag不是GM的Gamemanger</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tag<span class="token operator">==</span><span class="token string">"GM"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">Destroy</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">CheckSingle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//删掉多余的GameManager</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Instance<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Instance <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+        <span class="token function">DontDestroyOnLoad</span><span class="token punctuation">(</span>gameObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">Destroy</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <h2 id="3-unity粒子效果的使用"><a href="#3-unity粒子效果的使用" class="headerlink" title="3.unity粒子效果的使用"></a>3.unity粒子效果的使用</h2><p>1.细节提示<br><img src="https://img-blog.csdnimg.cn/af82bea603fd4ebb9beb275e3dd7bf96.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_14,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br>1处调小可以使图标变小（例如摄像机图标）<br>2处可以不显示边框<br>一，最主要的设置界面<br><img src="https://img-blog.csdnimg.cn/c72aa9f48a6848d99375f12e56419000.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_7,color_FFFFFF,t_70,g_se,x_16#pic_center"><br>Duration 为粒子效果的持续时间<br>Looping 为是否循环<br>Start 为单个粒子的生命周期（可以存在的时间）<br>Start Speed 为粒子开始时的速度 为0可以让粒子停留在原处<br>Max Particals 为生成的最大粒子数<br>二，Render（渲染，着色）<br><img src="https://img-blog.csdnimg.cn/72b88b4ae5974c308da501d1b2919c0e.png#pic_center" alt="在这里插入图片描述"><br>放入材质球可以让粒子改变样式，像什么光阵之类的都能更改<br>三，随着时间使粒子变化大小<br><img src="https://img-blog.csdnimg.cn/549df0eb68cb403aa6fc44b44903b333.png#pic_center" alt="在这里插入图片描述"><br>调节曲线来实现大小的变换</p>
 </blockquote>
 <blockquote>
 <h2 id="4-拓展Tarnsform使用深度优先算法"><a href="#4-拓展Tarnsform使用深度优先算法" class="headerlink" title="4.拓展Tarnsform使用深度优先算法"></a>4.拓展Tarnsform使用深度优先算法</h2><p>代码如下：</p>
 </blockquote>
-<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Transform <span class="title">DeepFind</span>(<span class="params"><span class="keyword">this</span> Transform parent,<span class="built_in">string</span> TargetName</span>)<span class="comment">//深度优先查找</span></span></span><br><span class="line">   {</span><br><span class="line">       Transform TeamTransform = <span class="literal">null</span>;</span><br><span class="line">       <span class="keyword">foreach</span> (Transform child <span class="keyword">in</span> parent)</span><br><span class="line">       {</span><br><span class="line">           <span class="keyword">if</span> (child.name==TargetName)</span><br><span class="line">           {</span><br><span class="line">               <span class="keyword">return</span> child;</span><br><span class="line">           }</span><br><span class="line">           <span class="keyword">else</span></span><br><span class="line">           {</span><br><span class="line">               TeamTransform = DeepFind(child,TargetName);</span><br><span class="line">               <span class="keyword">if</span> (TeamTransform!=<span class="literal">null</span>)</span><br><span class="line">               {</span><br><span class="line">                   <span class="keyword">return</span> TeamTransform;</span><br><span class="line">               }</span><br><span class="line">           }</span><br><span class="line">       }</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name">Transform</span> <span class="token function">DeepFind</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">Transform</span> parent<span class="token punctuation">,</span><span class="token class-name"><span class="token keyword">string</span></span> TargetName<span class="token punctuation">)</span><span class="token comment">//深度优先查找</span>
+   <span class="token punctuation">{</span>
+       <span class="token class-name">Transform</span> TeamTransform <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+       <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name">Transform</span> child <span class="token keyword">in</span> parent<span class="token punctuation">)</span>
+       <span class="token punctuation">{</span>
+           <span class="token keyword">if</span> <span class="token punctuation">(</span>child<span class="token punctuation">.</span>name<span class="token operator">==</span>TargetName<span class="token punctuation">)</span>
+           <span class="token punctuation">{</span>
+               <span class="token keyword">return</span> child<span class="token punctuation">;</span>
+           <span class="token punctuation">}</span>
+           <span class="token keyword">else</span>
+           <span class="token punctuation">{</span>
+               TeamTransform <span class="token operator">=</span> <span class="token function">DeepFind</span><span class="token punctuation">(</span>child<span class="token punctuation">,</span>TargetName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token keyword">if</span> <span class="token punctuation">(</span>TeamTransform<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+               <span class="token punctuation">{</span>
+                   <span class="token keyword">return</span> TeamTransform<span class="token punctuation">;</span>
+               <span class="token punctuation">}</span>
+           <span class="token punctuation">}</span>
+       <span class="token punctuation">}</span>
+       <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>使用方法如下代码所示：</p>
-<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> GameObject WHR; </span><br><span class="line"> WHR = transform.DeepFind(<span class="string">"WeaponHandleR"</span>).gameObject;<span class="comment">//以自身作为父物体往下面找weaponHandleR</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token class-name">GameObject</span> WHR<span class="token punctuation">;</span> 
+ WHR <span class="token operator">=</span> transform<span class="token punctuation">.</span><span class="token function">DeepFind</span><span class="token punctuation">(</span><span class="token string">"WeaponHandleR"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>gameObject<span class="token punctuation">;</span><span class="token comment">//以自身作为父物体往下面找weaponHandleR</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
 <h2 id="5-this的拓展作用"><a href="#5-this的拓展作用" class="headerlink" title="5.this的拓展作用"></a>5.this的拓展作用</h2><p>代码依旧为上一个代码，</p>
 </blockquote>
-<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">Helper</span> </span><br><span class="line"></span><br><span class="line">{ </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">GetSex</span>(<span class="params"><span class="keyword">this</span> Person item</span>)</span> </span><br><span class="line"></span><br><span class="line">    { </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> item.Sex; </span><br><span class="line"></span><br><span class="line">    } </span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//调用：</span></span><br><span class="line"></span><br><span class="line">Person person = <span class="keyword">new</span> Person(); </span><br><span class="line"></span><br><span class="line">person.GetSex();</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Helper</span> 
+
+<span class="token punctuation">{</span> 
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> <span class="token function">GetSex</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">Person</span> item<span class="token punctuation">)</span> 
+
+    <span class="token punctuation">{</span> 
+
+        <span class="token keyword">return</span> item<span class="token punctuation">.</span>Sex<span class="token punctuation">;</span> 
+
+    <span class="token punctuation">}</span> 
+
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">//调用：</span>
+
+<span class="token class-name">Person</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+person<span class="token punctuation">.</span><span class="token function">GetSex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -1205,6 +1270,17 @@
 
 
 
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
 
     <footer class="page-footer bg-color">
     
@@ -1529,3 +1605,6 @@ $(function () {
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>

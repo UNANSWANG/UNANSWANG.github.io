@@ -506,6 +506,9 @@ Ray ray = Camera.main.ScreenPointToRay(In">
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -537,7 +540,23 @@ Ray ray = Camera.main.ScreenPointToRay(In">
 <li>然后给他们的Layer改一下<br><img src="https://img-blog.csdnimg.cn/69dd7eff7a984a9dbf21cc19294af961.png" alt="在这里插入图片描述"></li>
 <li>写上ray相关的代码</li>
 </ul>
-<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="built_in">int</span> TargetMask;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    {</span><br><span class="line">        TargetMask = LayerMask.GetMask(<span class="string">"Target"</span>);<span class="comment">//得到的</span></span><br><span class="line">        print(TargetMask);<span class="comment">//输出看看是不是得到了值</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    {</span><br><span class="line">        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);<span class="comment">//从鼠标所在位置发射射线</span></span><br><span class="line">        RaycastHit hit;<span class="comment">//设置一个被射线射到的物体</span></span><br><span class="line">        <span class="keyword">if</span> (Physics.Raycast(ray,<span class="keyword">out</span> hit,<span class="number">100.0F</span>,TargetMask))<span class="comment">//使这个射线往原定方向射100米并且只与你设置的Layer层级相撞</span></span><br><span class="line">        {</span><br><span class="line">            Vector3 offset = <span class="keyword">new</span> Vector3(<span class="number">15</span>,<span class="number">0</span>,<span class="number">0</span>);<span class="comment">//目标物体偏移量</span></span><br><span class="line">            hit.transform.position += offset;<span class="comment">//使目标物体偏移</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">int</span></span> TargetMask<span class="token punctuation">;</span>
+    <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        TargetMask <span class="token operator">=</span> LayerMask<span class="token punctuation">.</span><span class="token function">GetMask</span><span class="token punctuation">(</span><span class="token string">"Target"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//得到的</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>TargetMask<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//输出看看是不是得到了值</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name">Ray</span> ray <span class="token operator">=</span> Camera<span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">ScreenPointToRay</span><span class="token punctuation">(</span>Input<span class="token punctuation">.</span>mousePosition<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//从鼠标所在位置发射射线</span>
+        <span class="token class-name">RaycastHit</span> hit<span class="token punctuation">;</span><span class="token comment">//设置一个被射线射到的物体</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Physics<span class="token punctuation">.</span><span class="token function">Raycast</span><span class="token punctuation">(</span>ray<span class="token punctuation">,</span><span class="token keyword">out</span> hit<span class="token punctuation">,</span><span class="token number">100.0F</span><span class="token punctuation">,</span>TargetMask<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//使这个射线往原定方向射100米并且只与你设置的Layer层级相撞</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name">Vector3</span> offset <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Vector3</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//目标物体偏移量</span>
+            hit<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>position <span class="token operator">+=</span> offset<span class="token punctuation">;</span><span class="token comment">//使目标物体偏移</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>当鼠标移至目标位置会有下图的效果<br><img src="https://img-blog.csdnimg.cn/2c5bd98893904e15872f44fc295812ce.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oiR5bey57uP5oCS5LiN5Y-v6YGP5LqG77yB,size_11,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></li>
@@ -546,7 +565,7 @@ Ray ray = Camera.main.ScreenPointToRay(In">
 </li>
 <li>函数：</li>
 </ul>
-<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MatchTarget</span> (<span class="params">Vector3 matchPosition, Quaternion matchRotation, AvatarTarget targetBodyPart, MatchTargetWeightMask weightMask, <span class="built_in">float</span> startNormalizedTime,<span class="built_in">float</span> targetNormalizedTime</span>)</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token return-type class-name"><span class="token keyword">void</span></span> MatchTarget <span class="token punctuation">(</span><span class="token class-name">Vector3</span> matchPosition<span class="token punctuation">,</span> <span class="token class-name">Quaternion</span> matchRotation<span class="token punctuation">,</span> <span class="token class-name">AvatarTarget</span> targetBodyPart<span class="token punctuation">,</span> <span class="token class-name">MatchTargetWeightMask</span> weightMask<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">float</span></span> startNormalizedTime<span class="token punctuation">,</span><span class="token class-name"><span class="token keyword">float</span></span> targetNormalizedTime<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>如何使用：<br>使你的targetBodyPart（你想要动的身体部位）在你执行的动作的开始时间startNormalizedTime到最终时间targetNormalizedTime之间，移向目标地方matchRotation,matchPosition（目标地点的位置和旋转值）并且你需要定下一个weightMask（x,y,x方向上的权重）去移动</li>
 <li><strong>用于攀爬和移动之类，用途广泛</strong></li>
@@ -1209,6 +1228,17 @@ Ray ray = Camera.main.ScreenPointToRay(In">
 
 
 
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
 
     <footer class="page-footer bg-color">
     
@@ -1533,3 +1563,6 @@ $(function () {
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>

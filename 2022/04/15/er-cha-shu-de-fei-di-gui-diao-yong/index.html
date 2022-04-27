@@ -9,7 +9,9 @@
 
 前序遍历将左边孩子全放进栈并输出，遇到空的就访问栈的头节点的右孩子（如此往复直到找到有右孩子的节点。）代码如下：
 
-1234567891011121314151617void presq(bitree s) {	stack&amp;lt">
+void presq(bitree s) {
+	stack&amp;lt;bitree&amp;gt; t;
+	bitree v">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -488,7 +490,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    433
+                    436
                 </div>
                 
 
@@ -510,6 +512,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -519,21 +524,86 @@
 <blockquote>
 <h1 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h1><p>将左边孩子全放进栈并输出，遇到空的就访问栈的头节点的右孩子（如此往复直到找到有右孩子的节点。）<br><strong>代码如下：</strong></p>
 </blockquote>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">presq</span><span class="params">(bitree s)</span> </span>{</span><br><span class="line">	stack&lt;bitree&gt; t;</span><br><span class="line">	bitree v;</span><br><span class="line">	bitree k;</span><br><span class="line">	v = s;</span><br><span class="line">	<span class="keyword">while</span> (v||!t.<span class="built_in">empty</span>()) {</span><br><span class="line">		<span class="keyword">if</span> (v) {</span><br><span class="line">			cout &lt;&lt; v-&gt;e;</span><br><span class="line">			t.<span class="built_in">push</span>(v);</span><br><span class="line">			v = v-&gt;l;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> {</span><br><span class="line">			v = t.<span class="built_in">top</span>()-&gt;r;</span><br><span class="line">			t.<span class="built_in">pop</span>();</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">presq</span><span class="token punctuation">(</span>bitree s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	stack<span class="token operator">&lt;</span>bitree<span class="token operator">&gt;</span> t<span class="token punctuation">;</span>
+	bitree v<span class="token punctuation">;</span>
+	bitree k<span class="token punctuation">;</span>
+	v <span class="token operator">=</span> s<span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>v<span class="token operator">||</span><span class="token operator">!</span>t<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			cout <span class="token operator">&lt;&lt;</span> v<span class="token operator">-&gt;</span>e<span class="token punctuation">;</span>
+			t<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			v <span class="token operator">=</span> v<span class="token operator">-&gt;</span>l<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">else</span> <span class="token punctuation">{</span>
+			v <span class="token operator">=</span> t<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span>r<span class="token punctuation">;</span>
+			t<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <h1 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h1><p>将左孩子全入栈（不输出），遇到空就将其输出并将头节点的右孩子赋值为下一个节点然后弹出头节点。<br><strong>代码如下</strong></p>
 </blockquote>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">midsq</span><span class="params">(bitree s)</span> </span>{<span class="comment">//中序遍历</span></span><br><span class="line">	stack&lt;bitree&gt; t;</span><br><span class="line">	bitree v;</span><br><span class="line">	v = s;</span><br><span class="line">	<span class="keyword">while</span> (v || !t.<span class="built_in">empty</span>()) {</span><br><span class="line">		<span class="keyword">if</span> (v) {</span><br><span class="line">			t.<span class="built_in">push</span>(v); v = v-&gt;l;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> {</span><br><span class="line">			cout &lt;&lt; t.<span class="built_in">top</span>()-&gt;e;</span><br><span class="line">			v = t.<span class="built_in">top</span>()-&gt;r;</span><br><span class="line">			t.<span class="built_in">pop</span>();</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">midsq</span><span class="token punctuation">(</span>bitree s<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//中序遍历</span>
+	stack<span class="token operator">&lt;</span>bitree<span class="token operator">&gt;</span> t<span class="token punctuation">;</span>
+	bitree v<span class="token punctuation">;</span>
+	v <span class="token operator">=</span> s<span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>v <span class="token operator">||</span> <span class="token operator">!</span>t<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			t<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span> v <span class="token operator">=</span> v<span class="token operator">-&gt;</span>l<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">else</span> <span class="token punctuation">{</span>
+			cout <span class="token operator">&lt;&lt;</span> t<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span>e<span class="token punctuation">;</span>
+			v <span class="token operator">=</span> t<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span>r<span class="token punctuation">;</span>
+			t<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <h1 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h1><p>这个就比较复杂了，先将根节点放进栈，然后判断其左右孩子是否存在，要是都不存在，则输出或者其左孩子或右孩子是上个栈里面的节点，也输出，否则就将其右孩子和左孩子分别入栈。<br><strong>代码如下</strong></p>
 </blockquote>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">forsq</span><span class="params">(bitree s)</span> </span>{</span><br><span class="line">	stack&lt;bitree&gt; t;</span><br><span class="line">	bitree v,c;</span><br><span class="line">	c = <span class="literal">NULL</span>;</span><br><span class="line">	t.<span class="built_in">push</span>(s);</span><br><span class="line">	<span class="keyword">while</span> (!t.<span class="built_in">empty</span>()) {</span><br><span class="line">		v = t.<span class="built_in">top</span>();</span><br><span class="line">		<span class="keyword">if</span> ((!v-&gt;l &amp;&amp; !v-&gt;r) || (c != <span class="literal">NULL</span> &amp;&amp; (v-&gt;l == c ||v-&gt;r == c))) {</span><br><span class="line">			cout &lt;&lt; v-&gt;e;</span><br><span class="line">			t.<span class="built_in">pop</span>();</span><br><span class="line">			c = v;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> {</span><br><span class="line">			<span class="keyword">if</span> (v-&gt;r)t.<span class="built_in">push</span>(v-&gt;r);</span><br><span class="line">			<span class="keyword">if</span> (v-&gt;l)t.<span class="built_in">push</span>(v-&gt;l);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">forsq</span><span class="token punctuation">(</span>bitree s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	stack<span class="token operator">&lt;</span>bitree<span class="token operator">&gt;</span> t<span class="token punctuation">;</span>
+	bitree v<span class="token punctuation">,</span>c<span class="token punctuation">;</span>
+	c <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+	t<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>t<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		v <span class="token operator">=</span> t<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">!</span>v<span class="token operator">-&gt;</span>l <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>v<span class="token operator">-&gt;</span>r<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span>c <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>v<span class="token operator">-&gt;</span>l <span class="token operator">==</span> c <span class="token operator">||</span>v<span class="token operator">-&gt;</span>r <span class="token operator">==</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			cout <span class="token operator">&lt;&lt;</span> v<span class="token operator">-&gt;</span>e<span class="token punctuation">;</span>
+			t<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			c <span class="token operator">=</span> v<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">else</span> <span class="token punctuation">{</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>v<span class="token operator">-&gt;</span>r<span class="token punctuation">)</span>t<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token operator">-&gt;</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>v<span class="token operator">-&gt;</span>l<span class="token punctuation">)</span>t<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token operator">-&gt;</span>l<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <h1 id="树的高度"><a href="#树的高度" class="headerlink" title="树的高度"></a>树的高度</h1><p><strong>直接给代码，自己体会。。。。</strong></p>
 </blockquote>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">hight</span><span class="params">(bitree s, <span class="type">int</span>&amp; ans2)</span> </span>{</span><br><span class="line">	<span class="keyword">if</span> (s) {</span><br><span class="line">		<span class="keyword">if</span> (!s-&gt;l &amp;&amp; !s-&gt;r)ans2 = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> {</span><br><span class="line">			<span class="type">int</span> l, r;</span><br><span class="line">			<span class="built_in">hight</span>(s-&gt;l, l);</span><br><span class="line">			<span class="built_in">hight</span>(s-&gt;r, r);</span><br><span class="line">			<span class="keyword">if</span> (l &gt; r)ans2 = l + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span> ans2 = r + <span class="number">1</span>;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> ans2;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">hight</span><span class="token punctuation">(</span>bitree s<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> ans2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>s<span class="token operator">-&gt;</span>l <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>s<span class="token operator">-&gt;</span>r<span class="token punctuation">)</span>ans2 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token keyword">else</span> <span class="token punctuation">{</span>
+			<span class="token keyword">int</span> l<span class="token punctuation">,</span> r<span class="token punctuation">;</span>
+			<span class="token function">hight</span><span class="token punctuation">(</span>s<span class="token operator">-&gt;</span>l<span class="token punctuation">,</span> l<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token function">hight</span><span class="token punctuation">(</span>s<span class="token operator">-&gt;</span>r<span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">&gt;</span> r<span class="token punctuation">)</span>ans2 <span class="token operator">=</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+			<span class="token keyword">else</span> ans2 <span class="token operator">=</span> r <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> ans2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>给个例子：</strong><br>如图：<br><img src="https://img-blog.csdnimg.cn/20210606201314692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzU0NzU2NTkx,size_16,color_FFFFFF,t_70#pic_center"><br><strong>输出以后是：</strong></p>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">abc  de g  f</span><br><span class="line">先根遍历</span><br><span class="line">abcdegf</span><br><span class="line">中根遍历</span><br><span class="line">cbegdfa</span><br><span class="line">后根遍历</span><br><span class="line">cgefdba</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">abc  de g  f
+先根遍历
+abcdegf
+中根遍历
+cbegdfa
+后根遍历
+cgefdba<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -1208,6 +1278,17 @@
 
 
 
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
 
     <footer class="page-footer bg-color">
     
@@ -1532,3 +1613,6 @@ $(function () {
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>

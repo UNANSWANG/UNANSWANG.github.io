@@ -512,6 +512,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -529,10 +532,68 @@
 </ol>
 <p>其中Navigation static是一般障碍物的，下面那个Off Mesh Link Generation是可跳跃的地面勾选的这样才能在可跳跃面板搜到他。</p>
 <h2 id="部分代码实现"><a href="#部分代码实现" class="headerlink" title="部分代码实现"></a>部分代码实现</h2><p>玩家类挂在玩家身上</p>
-<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.AI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Player</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">private</span> NavMeshAgent agent;</span><br><span class="line">    <span class="keyword">private</span> LineRenderer lineRender;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    {</span><br><span class="line">        agent = transform.GetComponent&lt;NavMeshAgent&gt;();</span><br><span class="line">        lineRender = transform.GetComponent&lt;LineRenderer&gt;();</span><br><span class="line">        <span class="keyword">if</span> (agent==<span class="literal">null</span>)</span><br><span class="line">        {</span><br><span class="line">            Debug.LogError(<span class="string">"未找到代理！！！"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    {</span><br><span class="line">        DrawLine();</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MoveToTarget</span>(<span class="params">Vector3 tar</span>)</span></span><br><span class="line">    {</span><br><span class="line">        agent.SetDestination(tar);</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DrawLine</span>()</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (lineRender!=<span class="literal">null</span>)<span class="comment">//在外面给该物体身上挂载一个LineRender组件</span></span><br><span class="line">        {</span><br><span class="line">            lineRender.positionCount = agent.path.corners.Length;</span><br><span class="line">            lineRender.SetPositions(agent.path.corners);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Collections</span><span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic</span><span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token namespace">UnityEngine</span><span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token namespace">UnityEngine<span class="token punctuation">.</span>AI</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Player</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">MonoBehaviour</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">NavMeshAgent</span> agent<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">LineRenderer</span> lineRender<span class="token punctuation">;</span>
+    <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        agent <span class="token operator">=</span> transform<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetComponent</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>NavMeshAgent<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        lineRender <span class="token operator">=</span> transform<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetComponent</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>LineRenderer<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>agent<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Debug<span class="token punctuation">.</span><span class="token function">LogError</span><span class="token punctuation">(</span><span class="token string">"未找到代理！！！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">DrawLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">MoveToTarget</span><span class="token punctuation">(</span><span class="token class-name">Vector3</span> tar<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        agent<span class="token punctuation">.</span><span class="token function">SetDestination</span><span class="token punctuation">(</span>tar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">DrawLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>lineRender<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token comment">//在外面给该物体身上挂载一个LineRender组件</span>
+        <span class="token punctuation">{</span>
+            lineRender<span class="token punctuation">.</span>positionCount <span class="token operator">=</span> agent<span class="token punctuation">.</span>path<span class="token punctuation">.</span>corners<span class="token punctuation">.</span>Length<span class="token punctuation">;</span>
+            lineRender<span class="token punctuation">.</span><span class="token function">SetPositions</span><span class="token punctuation">(</span>agent<span class="token punctuation">.</span>path<span class="token punctuation">.</span>corners<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>挂在其他物体上控制玩家的代码</p>
-<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerController</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">public</span> Player currentAgent;</span><br><span class="line">    <span class="keyword">public</span> RaycastHit hit;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (Input.GetMouseButton(<span class="number">1</span>))</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),<span class="keyword">out</span> hit,<span class="number">1000</span>,<span class="number">1</span>&lt;&lt;<span class="number">8</span>))</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span> (currentAgent!=<span class="literal">null</span>)</span><br><span class="line">                {</span><br><span class="line">                    currentAgent.MoveToTarget(hit.point);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Collections</span><span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic</span><span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token namespace">UnityEngine</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PlayerController</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">MonoBehaviour</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">Player</span> currentAgent<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">RaycastHit</span> hit<span class="token punctuation">;</span>
+    
+    <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Input<span class="token punctuation">.</span><span class="token function">GetMouseButton</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>Physics<span class="token punctuation">.</span><span class="token function">Raycast</span><span class="token punctuation">(</span>Camera<span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">ScreenPointToRay</span><span class="token punctuation">(</span>Input<span class="token punctuation">.</span>mousePosition<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">out</span> hit<span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>currentAgent<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    currentAgent<span class="token punctuation">.</span><span class="token function">MoveToTarget</span><span class="token punctuation">(</span>hit<span class="token punctuation">.</span>point<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>此处只做出了移动，跳跃和爬楼梯可以去B站看<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wo4y1o7Wm?p=1">视频</a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
@@ -1199,6 +1260,17 @@
 
 
 
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
 
     <footer class="page-footer bg-color">
     
@@ -1523,3 +1595,6 @@ $(function () {
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
